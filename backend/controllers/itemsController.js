@@ -21,19 +21,40 @@ const getOneItem = async (req,res)=>{
 }
 
 //add new item
-const addItem = (req,res)=>{
-    res.status(201).json({message:"New Item added"})
+const addItem = async (req,res)=>{
+    const {name,category,image,description,price} = req.body;
+    try{
+        const items = await Items.create({name,category,image,description,price});
+        res.status(201).json(items)
+    }
+    catch(err){
+        res.status(400).json({message:"Cannot add new item"})
+    }
 }
 
 //delete item
-const deleteItem = (req,res)=>{
+const deleteItem = async (req,res)=>{
     const {id} = req.params
-    res.status(200).json({message:`Item ${id} deleted`})
+    if(!mongoose.Types.ObjectId.isValid){
+        return res.status(400).json({message: "Invalid Id"})
+    }
+    const items = await Items.findByIdAndDelete(id);
+    if(!items){
+        return res.status(400).json({message: `Cannot Find items with ${id}`})
+    }
+    res.status(200).json(items)
 }
 
-const updateItem = (req,res)=>{
+const updateItem = async (req,res)=>{
     const {id} = req.params
-    res.status(200).json({message:`Updated item ${id}`})
+    if(!mongoose.Types.ObjectId.isValid){
+        return res.status(400).json({message:'Invalid Id'})
+    }
+    const items = await Items.findByIdAndUpdate(id,{...req.body});
+    if(!items){
+        return res.status(400).json({message:`Cannot find items with ${id}`})
+    }
+    res.status(200).json(items)
 }
 
 module.exports = {
