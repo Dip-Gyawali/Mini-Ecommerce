@@ -2,6 +2,7 @@ import React from "react";
 import profile from "../assets/profilePic.jpg";
 import sales from "../assets/sales.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell } from "@fortawesome/free-regular-svg-icons";
 
 export default function SellerNavbar() {
   return (
@@ -17,7 +18,7 @@ export default function SellerNavbar() {
 
       <div className="flex gap-2 items-center">
         <img src={profile} alt="logo" className="h-10 rounded-full" />
-        <FontAwesomeIcon icon="fa-solid fa-bell" />
+        <FontAwesomeIcon icon={faBell} className="h-8" />
       </div>
 
     </div>
