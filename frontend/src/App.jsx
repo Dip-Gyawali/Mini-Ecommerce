@@ -4,6 +4,7 @@ import Home from './Pages/Home'
 import SellerHome from './Pages/SellerHome'
 import BuyerHome from './Pages/BuyerHome'
 import Error from './Pages/Error'
+import SellerNavbar from './Components/SellerNavbar'
 
 const route = createBrowserRouter([
    {
@@ -13,7 +14,11 @@ const route = createBrowserRouter([
    },
    {
     path:'/seller',
-    element:<SellerHome/>
+    element:<SellerHome/>,
+    children:[{
+      path:'/seller',
+      element:<SellerNavbar/>
+    }]
    },
    {
     path:'/buyer',

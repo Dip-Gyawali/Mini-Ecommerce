@@ -9,14 +9,9 @@ const {
 } = require("../controllers/itemsController");
 
 route.get("/",getItems);
-
 route.get("/:id",getOneItem);
-
 route.post("/",addItem);
-
 route.delete("/:id",deleteItem);
-
-//update an item
 route.patch("/:id",updateItem);
 
 module.exports = route;
