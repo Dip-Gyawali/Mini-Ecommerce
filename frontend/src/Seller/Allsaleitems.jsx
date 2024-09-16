@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import ItemsContainer from './ItemsContainer';
 
 export default function Allsaleitems() {
     const [items,setItems]= useState([]);
@@ -18,10 +19,7 @@ export default function Allsaleitems() {
   return (
     <div className='grid grid-cols-3 gap-5'>
       {items.map((ele)=>(
-        <div key={ele._id}>
-           <img src={ele.image} alt="image" className='h-20'/>
-           
-        </div>
+        <ItemsContainer key={ele._id} item={ele}/>
       ))}
     </div>
   )
