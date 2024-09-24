@@ -5,7 +5,7 @@ import SellerNavbar from "../Seller/SellerNavbar";
 
 export default function SellerHome() {
   return (
-    <div className="overflow-hidden">
+    <div>
       <SellerNavbar/>
       <div className="flex gap-3 h-[100vh]">
         {/* Sidebar */}

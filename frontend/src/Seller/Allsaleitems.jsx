@@ -17,7 +17,7 @@ export default function Allsaleitems() {
     },[])
 
   return (
-    <div className='grid grid-cols-3 gap-5'>
+    <div className='grid grid-cols-3 gap-5 mb-32'>
       {items.map((ele)=>(
         <ItemsContainer key={ele._id} item={ele}/>
       ))}

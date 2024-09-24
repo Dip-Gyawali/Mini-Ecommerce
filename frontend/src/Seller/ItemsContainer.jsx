@@ -11,7 +11,7 @@ export default function ItemsContainer({ item }) {
       </div>
       <h1 className="font-bold">Price: <span className="font-normal">Rs.{item.price}</span></h1>
       <h1 className="text-purple-600 text-xl">{item.description}</h1>
-      <p>{moment(item.createdAt).fromNow()}</p>
+      <p>Created: {moment(item.createdAt).fromNow()}</p>
     </div>
   );
 }
