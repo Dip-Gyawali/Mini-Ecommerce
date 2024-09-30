@@ -19,7 +19,9 @@ export default function BuyerNavbar() {
             return {color:isActive?"red":"black"}
          }}>About</NavLink>
        </nav>
+       <NavLink to='/buyer/cart'>
        <button className='border-[1px] bg-purple-400 rounded-xl py-2 px-5 text-lg hover:bg-purple-500'>Cart</button>
+       </NavLink>
     </div>
   )
 }

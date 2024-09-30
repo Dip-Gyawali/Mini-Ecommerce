@@ -11,6 +11,7 @@ import BuyerMain from "./Buyer/BuyerMain";
 import BuyerShop from "./Buyer/BuyerShop";
 import BuyerBlog from "./Buyer/BuyerBlog";
 import BuyerAbout from "./Buyer/BuyerAbout";
+import BuyerCart from "./Buyer/BuyerCart";
 
 const route = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const route = createBrowserRouter([
       {
         path:'/buyer/about',
         element:<BuyerAbout/>
+      },
+      {
+        path:'/buyer/cart',
+        element:<BuyerCart/>
       }
     ]
   },
