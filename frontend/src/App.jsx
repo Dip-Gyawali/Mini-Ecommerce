@@ -6,6 +6,11 @@ import BuyerHome from "./Pages/BuyerHome";
 import Error from "./Pages/Error";
 import Allsaleitems from "./Seller/Allsaleitems";
 import SellerForm from "./Seller/SellerForm";
+import SellerContext from "./sellerContext/SellerContext";
+import BuyerMain from "./Buyer/BuyerMain";
+import BuyerShop from "./Buyer/BuyerShop";
+import BuyerBlog from "./Buyer/BuyerBlog";
+import BuyerAbout from "./Buyer/BuyerAbout";
 
 const route = createBrowserRouter([
   {
@@ -30,8 +35,30 @@ const route = createBrowserRouter([
   {
     path: "/buyer",
     element: <BuyerHome />,
+    children:[
+      {
+        path:'/buyer',
+        element:<BuyerMain/>
+      },
+      {
+        path:'/buyer/shop',
+        element:<BuyerShop/>
+      },
+      {
+        path:'/buyer/blog',
+        element:<BuyerBlog/>
+      },
+      {
+        path:'/buyer/about',
+        element:<BuyerAbout/>
+      }
+    ]
   },
 ]);
 export default function App() {
-  return <RouterProvider router={route} />;
+  return (
+    <SellerContext>
+      <RouterProvider router={route} />
+    </SellerContext>
+)
 }
