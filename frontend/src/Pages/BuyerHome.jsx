@@ -6,7 +6,9 @@ export default function BuyerHome() {
   return (
     <div className='flex flex-col gap-5'>
       <BuyerNavbar/>
-      <Outlet/>
+      <div className="flex-grow p-4 overflow-y-auto">
+          <Outlet />
+        </div>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import logo from '../assets/logo.jpg'
 import { NavLink } from 'react-router-dom'
 export default function BuyerNavbar() {
   return (
-    <div className='flex items-center justify-between p-5 shadow-md'>
+    <div className='flex items-center justify-between p-5 shadow-md sticky top-0 z-20 bg-white'>
        <img src={logo} alt="ecommerce logo" height={100} width={70} />
        <nav className='flex gap-10 text-lg font-bold'>
          <NavLink to='/buyer' style={({isActive})=>{

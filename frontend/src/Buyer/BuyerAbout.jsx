@@ -2,7 +2,7 @@ import React from "react";
 
 export default function BuyerAbout() {
   return (
-    <div className="flex items-center justify-center h-[90vh]">
+    <div className="flex items-center justify-center h-[80vh]">
       <div className="flex flex-col md:flex-row-reverse items-center justify-between w-full max-w-6xl p-8">
         {/* Image Section */}
         <div className="flex-1 flex justify-center items-center p-4 md:p-8">
